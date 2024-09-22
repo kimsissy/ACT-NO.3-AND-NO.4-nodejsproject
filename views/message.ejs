@@ -1,0 +1,38 @@
+ <%- include('partial/start.ejs') %>
+
+    <div class="fan-messages">
+        <h2 class="fan-messages-title">Fan Messages</h2>
+        <p class="fan-messages-description">Which Taylor Swift lyric speaks to your soul? Comment below and let's celebrate our love for her music, Swifites!</p>
+        <br>
+        <form action="/message" method="POST">
+            <textarea name="comment" placeholder="Share your thoughts about Taylor Swift's lyrics..." required></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    
+        <div class="comments">
+            <% if (comments && comments.length > 0) { %>
+                <% comments.forEach(function(comment) { %>
+                    <div class="comment">
+                        <p><%= comment %></p>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No comments yet. Be the first to share!</p>
+            <% } %>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="message-container">
+        <h1>Thank You!</h1>
+        <p>for comment!</p>
+        <p>Just like Taylor swift sings, 'This is a state of grace, this is the worthwhile fight.Your support means the world, and together, we'll keep this Swiftie love story going.</p>
+        <p>Keep shining like the stars!.</p>
+        <a href="/contact" class="btn">Return to Contact Page</a>
+    </div>
+
+    <%- include('partial/end.ejs') %>
+
